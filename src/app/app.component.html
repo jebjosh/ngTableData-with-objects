@@ -17,7 +17,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let i of dataa">
+      <tr *ngFor="let i of dataa as d" (click)="open(i, d)">
         <td>{{ i.name }}</td>
         <td>{{ i.email }}</td>
         <td>{{ i.website }}</td>
@@ -25,3 +25,8 @@
     </tbody>
   </table>
 </div>
+
+<app-view (selectedDate)="itemShow($event)"></app-view>
+<app-dialog *ngIf="generalService.showDialog"></app-dialog>
+
+<button (click)="showDialog()">Show dialog</button>

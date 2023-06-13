@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from './service/general.service';
 
 @Component({
   selector: 'app-root',
@@ -62,4 +63,20 @@ export class AppComponent implements OnInit {
   ];
 
   dtOptions: DataTables.Settings = {};
+
+  open(item: any, d: any[]) {
+    d.forEach((i) => {
+      console.log(i);
+    });
+  }
+
+  itemShow(item: any) {
+    console.log(item);
+  }
+
+  constructor(public generalService: GeneralService) {}
+
+  showDialog() {
+    this.generalService.showDialog = true;
+  }
 }

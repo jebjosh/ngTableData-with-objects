@@ -1,0 +1,4 @@
+<select name="location" id="location" (change)="selectedLocation($event)">
+  <option value="default"></option>
+  <option *ngFor="let i of days" [value]="i">{{ i }}</option>
+</select>
